@@ -3,6 +3,8 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
 
+const routes = require('./routes.js')
+
 /**
  * Server
  * @Class
@@ -55,6 +57,8 @@ class Server {
    * Routes
    */
   routes () {
+    new routes.User(this.app, this.connect)
+
     this.app.use((req, res) => {
       res.status(404).json({
         code: 404,
