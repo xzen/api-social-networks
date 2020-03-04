@@ -10,7 +10,7 @@ const routes = require('./routes.js')
  * @Class
  */
 class Server {
-  constructor() {
+  constructor () {
     this.app = express()
   }
 
@@ -47,10 +47,10 @@ class Server {
   /**
    * Middleware
    */
-  middleware() {
+  middleware () {
     this.app.use(cors())
     this.app.use(bodyParser.json())
-    this.app.use(bodyParser.urlencoded({'extend': true}))
+    this.app.use(bodyParser.urlencoded({ 'extended': true }))
   }
 
   /**

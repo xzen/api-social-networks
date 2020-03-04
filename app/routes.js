@@ -1,5 +1,5 @@
-  const User = require('./controllers/user.js')
+const User = require('./controllers/user.js')
 
-  module.exports = {
-    User
-  }
+module.exports = {
+  User
+}

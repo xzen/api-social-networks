@@ -5,7 +5,7 @@ const UserModel = require('../models/user.js')
  * @class
  */
 class User {
-  constructor(app, connect) {
+  constructor (app, connect) {
     this.app = app
     this.UserModel = connect.model('User', UserModel)
 
@@ -21,13 +21,13 @@ class User {
         }).catch(err => {
           res.status(500).json({
             code: 500,
-            message: 'Internal Server Error'
+            message: err
           })
         })
-      } catch {
+      } catch (err) {
         res.status(500).json({
           code: 500,
-          message: 'Internal Server Error'
+          message: err
         })
       }
     })
@@ -46,13 +46,13 @@ class User {
         }).catch(err => {
           res.status(500).json({
             code: 500,
-            message: 'Internal Server Error'
+            message: err
           })
         })
-      } catch {
+      } catch (err) {
         res.status(500).json({
           code: 500,
-          message: 'Internal Server Error'
+          message: err
         })
       }
     })
